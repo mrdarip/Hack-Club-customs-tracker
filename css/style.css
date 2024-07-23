@@ -1,0 +1,39 @@
+:root {
+  --theme-ui-colors-darker: #121217;
+  --theme-ui-colors-dark: #17171d;
+  --theme-ui-colors-darkless: #252429;
+  --theme-ui-colors-black: #1f2d3d;
+  --theme-ui-colors-steel: #273444;
+  --theme-ui-colors-slate: #3c4858;
+  --theme-ui-colors-muted: #8492a6;
+  --theme-ui-colors-smoke: #e0e6ed;
+  --theme-ui-colors-snow: #f9fafc;
+  --theme-ui-colors-white: #ffffff;
+  --theme-ui-colors-red: #ec3750;
+  --theme-ui-colors-orange: #ff8c37;
+  --theme-ui-colors-yellow: #f1c40f;
+  --theme-ui-colors-green: #33d6a6;
+  --theme-ui-colors-cyan: #5bc0de;
+  --theme-ui-colors-blue: #338eda;
+  --theme-ui-colors-purple: #a633d6;
+  --theme-ui-colors-twitter: #1da1f2;
+  --theme-ui-colors-facebook: #3b5998;
+  --theme-ui-colors-instagram: #e1306c;
+  --theme-ui-colors-text: #1f2d3d;
+  --theme-ui-colors-background: #ffffff;
+  --theme-ui-colors-elevated: #ffffff;
+  --theme-ui-colors-sheet: #f9fafc;
+  --theme-ui-colors-sunken: #e0e6ed;
+  --theme-ui-colors-border: #e0e6ed;
+  --theme-ui-colors-placeholder: #8492a6;
+  --theme-ui-colors-secondary: #3c4858;
+  --theme-ui-colors-primary: #ec3750;
+  --theme-ui-colors-accent: #338eda;
+}
+
+body{
+    background-color: var(--theme-ui-colors-background);
+    color: var(--theme-ui-colors-text);
+    padding: 0px;
+    margin: 0px;
+}
