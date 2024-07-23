@@ -1,0 +1,96 @@
+{
+    "countries": [
+        {
+        "name": "United States",
+        "code": "US"
+        },
+        {
+        "name": "Canada",
+        "code": "CA"
+        },
+        {
+        "name": "Mexico",
+        "code": "MX"
+        },
+        {
+        "name": "United Kingdom",
+        "code": "GB"
+        },
+        {
+        "name": "Germany",
+        "code": "DE"
+        },
+        {
+        "name": "France",
+        "code": "FR"
+        },
+        {
+        "name": "Italy",
+        "code": "IT"
+        },
+        {
+        "name": "Spain",
+        "code": "ES"
+        },
+        {
+        "name": "Netherlands",
+        "code": "NL"
+        },
+        {
+        "name": "Belgium",
+        "code": "BE"
+        },
+        {
+        "name": "Sweden",
+        "code": "SE"
+        },
+        {
+        "name": "Norway",
+        "code": "NO"
+        },
+        {
+        "name": "Denmark",
+        "code": "DK"
+        },
+        {
+        "name": "Finland",
+        "code": "FI"
+        },
+        {
+        "name": "Switzerland",
+        "code": "CH"
+        },
+        {
+        "name": "Austria",
+        "code": "AT"
+        },
+        {
+        "name": "Greece",
+        "code": "GR"
+        },
+        {
+        "name": "Poland",
+        "code": "PL"
+        },
+        {
+        "name": "Czech Republic",
+        "code": "CZ"
+        },
+        {
+        "name": "Hungary",
+        "code": "HU"
+        },
+        {
+        "name": "Slovakia",
+        "code": "SK"
+        },
+        {
+        "name": "Slovenia",
+        "code": "SI"
+        },
+        {
+        "name": "Croatia",
+        "code": "HR"
+        }
+    ]
+}
