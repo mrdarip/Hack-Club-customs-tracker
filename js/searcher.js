@@ -1,5 +1,6 @@
 var countries = [];
 var products = [];
+var customs = [];
 
 var countrySelector = document.getElementById("country");
 var selectedCountry = countrySelector.value;
@@ -10,7 +11,9 @@ countrySelector.addEventListener("change", function() {
 });
 
 populateCountriesList();
+initializeCustoms();
 initializeProducts();
+
 
  function populateCountriesList() {
     fetch("../data/countries.json").then(response => response.json()).then(data => {
@@ -26,6 +29,12 @@ function initializeProducts() {
     });
 }
 
+function initializeCustoms() {
+    fetch("../data/customs.json").then(response => response.json()).then(data => {
+        customs = data.customs;
+    });
+}
+
 
 
 function setProducts(countryCode) {
@@ -36,7 +45,8 @@ function setProducts(countryCode) {
 
         productDiv.className = "product";
         productDiv.innerHTML = "<img src='" + product.image + "' alt='product image' width='100' height='100'>" +
-            "<p>" + product.name + "</p>";
+            "<p>" + product.name + "</p>"+
+            "<p>Price: " + customs[countryCode]["products"][product.name]["test"] + "</p>";
             
         productsArea.appendChild(productDiv);
     }
