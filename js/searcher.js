@@ -43,14 +43,24 @@ function setProducts(countryCode) {
     if(currentCountryCustoms != undefined){
         var productsToDisplay = currentCountryCustoms["products"];
         var productsToDisplayKeys = Object.keys(productsToDisplay);
+
+        var currency = countries.find(country => country.code == countryCode).currency;
         for (var i = 0; i < productsToDisplayKeys.length; i++) {
-            var product = products[productsToDisplayKeys[i]];
+            var productInfo = products[productsToDisplayKeys[i]];
+            var productCustoms = productsToDisplay[productInfo.name];
+
+            var maxCustom = Math.max.apply(null, Object.values(productCustoms));
+            var minCustom = Math.min.apply(null, Object.values(productCustoms));
+            var averageCustomFromProductCustoms = Object.values(productCustoms).reduce((a, b) => a + b, 0) / Object.keys(productCustoms).length;                       
+
             var productDiv = document.createElement("div");
 
             productDiv.className = "product";
-            productDiv.innerHTML = "<img src='" + product.image + "' alt='product image' width='100' height='100'>" +
-                "<p>" + product.name + "</p>"+
-                "<p>Price: " + productsToDisplay[product.name]["test"] + "</p>";
+            productDiv.innerHTML = "<img src='" + productInfo.image + "' alt='product image' width='100' height='100'>" +
+                "<p>" + productInfo.name + "</p>"+
+                "<p>Max custom: " + maxCustom + " " + currency +"</p>"+
+                "<p>Min custom: " + minCustom + " " + currency +"</p>"+
+                "<p>Average custom: " + averageCustomFromProductCustoms + " " + currency +"</p>";
                 
             productsArea.appendChild(productDiv);
         }

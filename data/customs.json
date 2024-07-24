@@ -3,12 +3,12 @@
         "ES": {
             "products": {
                 "Blot": {
-                    "test": 10,
-                    "test2": 0
+                    "test": 12,
+                    "test2": 2
                 },
                 "Sprig": {
                     "test": 20,
-                    "test2": 0
+                    "test2": 10
                 }
             }
         }
