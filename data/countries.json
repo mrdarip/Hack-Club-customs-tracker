@@ -1,96 +1,119 @@
 {
     "countries": [
         {
-        "name": "United States",
-        "code": "US"
+            "name": "United States",
+            "code": "US",
+            "currency": "USD"
         },
         {
-        "name": "Canada",
-        "code": "CA"
+            "name": "Canada",
+            "code": "CA",
+            "currency": "CAD"
         },
         {
-        "name": "Mexico",
-        "code": "MX"
+            "name": "Mexico",
+            "code": "MX",
+            "currency": "MXN"
         },
         {
-        "name": "United Kingdom",
-        "code": "GB"
+            "name": "United Kingdom",
+            "code": "GB",
+            "currency": "GBP"
         },
         {
-        "name": "Germany",
-        "code": "DE"
+            "name": "Germany",
+            "code": "DE",
+            "currency": "EUR"
         },
         {
-        "name": "France",
-        "code": "FR"
+            "name": "France",
+            "code": "FR",
+            "currency": "EUR"
         },
         {
-        "name": "Italy",
-        "code": "IT"
+            "name": "Italy",
+            "code": "IT",
+            "currency": "EUR"
         },
         {
-        "name": "Spain",
-        "code": "ES"
+            "name": "Spain",
+            "code": "ES",
+            "currency": "EUR"
         },
         {
-        "name": "Netherlands",
-        "code": "NL"
+            "name": "Netherlands",
+            "code": "NL",
+            "currency": "EUR"
         },
         {
-        "name": "Belgium",
-        "code": "BE"
+            "name": "Belgium",
+            "code": "BE",
+            "currency": "EUR"
         },
         {
-        "name": "Sweden",
-        "code": "SE"
+            "name": "Sweden",
+            "code": "SE",
+            "currency": "SEK"
         },
         {
-        "name": "Norway",
-        "code": "NO"
+            "name": "Norway",
+            "code": "NO",
+            "currency": "NOK"
         },
         {
-        "name": "Denmark",
-        "code": "DK"
+            "name": "Denmark",
+            "code": "DK",
+            "currency": "DKK"
         },
         {
-        "name": "Finland",
-        "code": "FI"
+            "name": "Finland",
+            "code": "FI",
+            "currency": "EUR"
         },
         {
-        "name": "Switzerland",
-        "code": "CH"
+            "name": "Switzerland",
+            "code": "CH",
+            "currency": "CHF"
         },
         {
-        "name": "Austria",
-        "code": "AT"
+            "name": "Austria",
+            "code": "AT",
+            "currency": "EUR"
         },
         {
-        "name": "Greece",
-        "code": "GR"
+            "name": "Greece",
+            "code": "GR",
+            "currency": "EUR"
         },
         {
-        "name": "Poland",
-        "code": "PL"
+            "name": "Poland",
+            "code": "PL",
+            "currency": "PLN"
         },
         {
-        "name": "Czech Republic",
-        "code": "CZ"
+            "name": "Czech Republic",
+            "code": "CZ",
+            "currency": "CZK"
         },
         {
-        "name": "Hungary",
-        "code": "HU"
+            "name": "Hungary",
+            "code": "HU",
+            "currency": "HUF"
         },
         {
-        "name": "Slovakia",
-        "code": "SK"
+            "name": "Slovakia",
+            "code": "SK",
+            "currency": "EUR"
         },
         {
-        "name": "Slovenia",
-        "code": "SI"
+            "name": "Slovenia",
+            "code": "SI",
+            "currency": "EUR"
         },
         {
-        "name": "Croatia",
-        "code": "HR"
+            "name": "Croatia",
+            "code": "HR",
+            "currency": "HRK"
         }
     ]
 }

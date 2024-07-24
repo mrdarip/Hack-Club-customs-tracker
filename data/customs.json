@@ -1,8 +1,6 @@
 {
     "customs": {
         "ES": {
-            "name": "España",
-            "currency": "EUR",
             "products": {
                 "Blot": {
                     "test": 10,
