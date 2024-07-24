@@ -5,6 +5,8 @@ var countrySelector = document.getElementById("country");
 var selectedCountry = countrySelector.value;
 countrySelector.addEventListener("change", function() {
     selectedCountry = countrySelector.value;
+    setProducts(selectedCountry);
+    console.log(selectedCountry);
 });
 
 populateCountriesList();
@@ -20,13 +22,13 @@ initializeProducts();
 function initializeProducts() {
     fetch("../data/products.json").then(response => response.json()).then(data => {
         products = data.productsAndImage;
-        setProducts();
+        setProducts(selectedCountry);
     });
 }
 
 
 
-function setProducts() {
+function setProducts(countryCode) {
     var productsArea = document.getElementById("productsArea");
     for (var i = 0; i < products.length; i++) {
         var product = products[i];
