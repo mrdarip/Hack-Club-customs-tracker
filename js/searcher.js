@@ -1,5 +1,5 @@
 var countries = [];
-var products = [];
+var products = {};
 var customs = [];
 
 var countrySelector = document.getElementById("country");
@@ -39,16 +39,21 @@ function initializeCustoms() {
 
 function setProducts(countryCode) {
     var productsArea = document.getElementById("productsArea");
-    for (var i = 0; i < products.length; i++) {
-        var product = products[i];
-        var productDiv = document.createElement("div");
+    var currentCountryCustoms = customs[countryCode];
+    if(currentCountryCustoms != undefined){
+        var productsToDisplay = currentCountryCustoms["products"];
+        var productsToDisplayKeys = Object.keys(productsToDisplay);
+        for (var i = 0; i < productsToDisplayKeys.length; i++) {
+            var product = products[productsToDisplayKeys[i]];
+            var productDiv = document.createElement("div");
 
-        productDiv.className = "product";
-        productDiv.innerHTML = "<img src='" + product.image + "' alt='product image' width='100' height='100'>" +
-            "<p>" + product.name + "</p>"+
-            "<p>Price: " + customs[countryCode]["products"][product.name]["test"] + "</p>";
-            
-        productsArea.appendChild(productDiv);
+            productDiv.className = "product";
+            productDiv.innerHTML = "<img src='" + product.image + "' alt='product image' width='100' height='100'>" +
+                "<p>" + product.name + "</p>"+
+                "<p>Price: " + productsToDisplay[product.name]["test"] + "</p>";
+                
+            productsArea.appendChild(productDiv);
+        }
     }
 }
 

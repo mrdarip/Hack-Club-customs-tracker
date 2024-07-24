@@ -1,12 +1,12 @@
 {
-    "productsAndImage": [
-        {
+    "productsAndImage": {
+        "Blot": {
             "name": "Blot",
             "image": "https://blot.hackclub.com/assets/blot-clear-bg.webp"
         },
-        {
+        "Sprig":{
             "name": "Sprig",
             "image": "https://sprig.hackclub.com/preview.png"
         }
-    ]
+    }
 }
