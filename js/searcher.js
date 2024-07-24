@@ -1,5 +1,12 @@
 var countries = [];
 var products = [];
+
+var countrySelector = document.getElementById("country");
+var selectedCountry = countrySelector.value;
+countrySelector.addEventListener("change", function() {
+    selectedCountry = countrySelector.value;
+});
+
 readAndSetCountries();
 readAndSetProducts();
 
