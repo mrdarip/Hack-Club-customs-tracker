@@ -7,22 +7,24 @@ countrySelector.addEventListener("change", function() {
     selectedCountry = countrySelector.value;
 });
 
-readAndSetCountries();
-readAndSetProducts();
+populateCountriesList();
+initializeProducts();
 
- function readAndSetCountries() {
+ function populateCountriesList() {
     fetch("../data/countries.json").then(response => response.json()).then(data => {
         countries = data.countries;
         setCountries();
     });
 }
 
-function readAndSetProducts() {
+function initializeProducts() {
     fetch("../data/products.json").then(response => response.json()).then(data => {
         products = data.productsAndImage;
         setProducts();
     });
 }
+
+
 
 function setProducts() {
     var productsArea = document.getElementById("productsArea");
