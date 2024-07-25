@@ -1,11 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Custom</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <form>
+      <label for="country">Select a country:</label>
+      <select id="country" name="country"></select>
+      <select id="product" name="product"></select>
+      <input type="text" name="username" id="username" placeholder="username"> 
+        <input type="number" name="customs" id="customs" placeholder="custom fees">
+
+      <a id="submitButton" href="#">submit</a>
+    </form>
+
+    <section id="steps" style="display: none">
+      <h2>1. Copy this to your clipboard</h2>
+      <textarea name="output" id="output" cols="30" rows="10"></textarea>
+
+      <h2>
+        2. Replace the text
+        <a
+          href="https://github.com/mrdarip/Hack-Club-customs-tracker/edit/main/data/countries.json"
+          >here</a
+        >
+        by pasting and then commit
+      </h2>
+    </section>
+
+    <script>
+      let launchingOnGithubPages =
+        window.location.hostname === "mrdarip.github.io";
+
+      function githubifyRoute(route) {
+        return launchingOnGithubPages
+          ? "/Hack-Club-customs-tracker/" + route
+          : route;
+      }
+      var countries = [];
+      var productsCodes = [];
+      var productsNames = [];
+      var countrySelector = document.getElementById("country");
+      var productSelector = document.getElementById("product");
+
+      populateCountriesList();
+      populateProductsList();
+
+      var submitButton = document.getElementById("submitButton");
+      var steps = document.getElementById("steps");
+
+      submitButton.addEventListener("click", function (event) {
+        steps.style.display = "block";
+
+        var countryName = document.getElementById("countryName").value;
+        var currency = document.getElementById("currency").value;
+        var code = document.getElementById("code").value;
+
+        var countries = {};
+        fetch(githubifyRoute("/data/countries.json"))
+          .then((response) => response.json())
+          .then((data) => {
+            countries = data;
+            console.log(countries);
+
+            countries.countries.push({
+              code: code,
+              name: countryName,
+              currency: currency,
+            });
+
+            var output = document.getElementById("output");
+            output.value = JSON.stringify(countries, null, 4);
+          });
+      });
+
+      function populateCountriesList() {
+        fetch(githubifyRoute("/data/countries.json"))
+          .then((response) => response.json())
+          .then((data) => {
+            countries = data.countries;
+            setCountries();
+          });
+      }
+      function populateProductsList() {
+        fetch(githubifyRoute("/data/products.json"))
+          .then((response) => response.json())
+          .then((data) => {
+            productsCodes = Object.keys(data.productsAndImage);
+            productsNames = Object.values(data.productsAndImage).map(
+              (product) => product.name
+            );
+            setProducts();
+          });
+        function setProducts() {
+          var product = document.getElementById("product");
+          for (var i = 0; i < productsCodes.length; i++) {
+            var option = document.createElement("option");
+            option.text = productsNames[i];
+            option.value = productsCodes[i];
+            product.add(option);
+          }
+        }
+      }
+
+      function setCountries() {
+        var country = document.getElementById("country");
+        for (var i = 0; i < countries.length; i++) {
+          var option = document.createElement("option");
+          option.text = countries[i].name;
+          option.value = countries[i].code;
+          country.add(option);
+        }
+      }
+    </script>
+  </body>
 </html>
