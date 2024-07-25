@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Custom</title>
+    <link rel="stylesheet" href="./style.css"/>
   </head>
   <body>
     <form>
@@ -81,7 +82,7 @@
             allCustoms.customs[countrySelector.value].products[
               productSelector.value
             ][username] = customs;
-            
+
             var output = document.getElementById("output");
             output.value = JSON.stringify(allCustoms, null, 4);
           });

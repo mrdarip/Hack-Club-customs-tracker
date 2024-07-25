@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Product</title>
+    <link rel="stylesheet" href="./style.css"/>
   </head>
   <body>
     <form>
@@ -42,7 +43,7 @@
       var steps = document.getElementById("steps");
 
       submitButton.addEventListener("click", function (event) {
-        steps.style.display = "block";
+        steps.style.display = "flex";
 
         var productName = document.getElementById("productName").value;
         var productImage = document.getElementById("productImage").value;
