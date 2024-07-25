@@ -1,3 +1,9 @@
+let launchingOnGithubPages = window.location.hostname === "mrdarip.github.io";
+
+function githubifyRoute(route) {
+    return launchingOnGithubPages ? "/Hack-Club-customs-tracker/" + route : route;
+}
+
 var countries = [];
 var products = {};
 var customs = [];
@@ -14,23 +20,22 @@ populateCountriesList();
 initializeCustoms();
 initializeProducts();
 
-
- function populateCountriesList() {
-    fetch("../data/countries.json").then(response => response.json()).then(data => {
+function populateCountriesList() {
+    fetch(githubifyRoute("/data/countries.json")).then(response => response.json()).then(data => {
         countries = data.countries;
         setCountries();
     });
 }
 
 function initializeProducts() {
-    fetch("../data/products.json").then(response => response.json()).then(data => {
+    fetch(githubifyRoute("/data/products.json")).then(response => response.json()).then(data => {
         products = data.productsAndImage;
         setProducts(selectedCountry);
     });
 }
 
 function initializeCustoms() {
-    fetch("../data/customs.json").then(response => response.json()).then(data => {
+    fetch(githubifyRoute("/data/customs.json")).then(response => response.json()).then(data => {
         customs = data.customs;
     });
 }
