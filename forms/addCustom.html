@@ -10,8 +10,13 @@
       <label for="country">Select a country:</label>
       <select id="country" name="country"></select>
       <select id="product" name="product"></select>
-      <input type="text" name="username" id="username" placeholder="username"> 
-        <input type="number" name="customs" id="customs" placeholder="custom fees">
+      <input type="text" name="username" id="username" placeholder="username" />
+      <input
+        type="number"
+        name="customs"
+        id="customs"
+        placeholder="custom fees"
+      />
 
       <a id="submitButton" href="#">submit</a>
     </form>
@@ -62,9 +67,19 @@
           .then((response) => response.json())
           .then((data) => {
             allCustoms = data;
-            console.log(allCustoms.customs[countrySelector.value].products[productSelector.value]);
+            console.log(
+              allCustoms.customs[countrySelector.value].products[
+                productSelector.value
+              ]
+            );
 
-            allCustoms.customs[countrySelector.value].products[productSelector.value]["a"] = "caca";
+            if (!countrySelector.value in allCustoms.customs) {
+              allCustoms.customs[countrySelector.value] = { products: {} };
+            }
+
+            allCustoms.customs[countrySelector.value].products[
+              productSelector.value
+            ]["a"] = "caca";
 
             var output = document.getElementById("output");
             output.value = JSON.stringify(allCustoms, null, 4);
