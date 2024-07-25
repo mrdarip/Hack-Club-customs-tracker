@@ -2,14 +2,6 @@
     "customs": {
         "ES": {
             "products": {
-                "Blot": {
-                    "test": 12,
-                    "test2": 2
-                },
-                "Sprig": {
-                    "test": 20,
-                    "test2": 10
-                },
                 "stickers": {
                     "mrdarip": "0"
                 }
