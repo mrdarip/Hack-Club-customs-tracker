@@ -4,9 +4,13 @@
             "name": "Blot",
             "image": "https://blot.hackclub.com/assets/blot-clear-bg.webp"
         },
-        "Sprig":{
+        "Sprig": {
             "name": "Sprig",
             "image": "https://sprig.hackclub.com/preview.png"
+        },
+        "stickers": {
+            "name": "Pile of stickers",
+            "image": "https://images.fillout.com/orgid-81/flowpublicid-n86hBpHXFsus/widgetid-cbsLd1W9tHmPW9frkYFap2/fQcmUUb2SGhkq45FYwX5XY/kjlahwjklhaekjhlwaee.png?a=tQth6fSettNGeiZE6wcs4Y"
         }
     }
 }
