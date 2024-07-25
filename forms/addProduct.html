@@ -7,8 +7,9 @@
   </head>
   <body>
     <form>
-      <input type="text" name="productName" id="productName" />
-      <input type="url" name="productImage" id="productImage" />
+      <input type="text" name="productCode" id="productCode" placeholder="short name"/>
+      <input type="text" name="productName" id="productName" placeholder="name"/>
+      <input type="url" name="productImage" id="productImage" placeholder="image URL" />
 
       <input type="submit" value="Add product" id="submitButton" />
     </form>
@@ -44,6 +45,7 @@
 
         var productName = document.getElementById("productName").value;
         var productImage = document.getElementById("productImage").value;
+        var productCode = document.getElementById("productCode").value;
 
         var products = {};
         fetch(githubifyRoute("/data/products.json"))
@@ -52,10 +54,10 @@
             products = data;
             console.log(products);
 
-            products.productsAndImage.push({
+            products.productsAndImage[productCode] = {
               name: productName,
               image: productImage,
-            });
+            };
 
             var output = document.getElementById("output");
             output.value = JSON.stringify(products, null, 4);
