@@ -62,7 +62,10 @@
             };
 
             var output = document.getElementById("output");
-            output.value = JSON.stringify(products, null, 4);
+            var outputJSON = JSON.stringify(products, null, 4);
+            output.value = outputJSON;
+
+            navigator.clipboard.writeText(outputJSON);
           });
       });
     </script>
