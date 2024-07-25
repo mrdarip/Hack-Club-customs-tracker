@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Product</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <form>
+      <input type="text" name="productName" id="productName" />
+      <input type="url" name="productImage" id="productImage" />
+
+      <input type="submit" value="Add product" id="submitButton" />
+    </form>
+
+    <section>
+      <h2>1. Copy this to your clipboard</h2>
+      <textarea name="output" id="output" cols="30" rows="10"></textarea>
+
+      <h2>
+        2. Replace the text
+        <a
+          href="https://github.com/mrdarip/Hack-Club-customs-tracker/edit/main/data/products.json"
+          >here</a
+        >
+        by pasting and then commit
+      </h2>
+    </section>
+
+    <script>
+      let launchingOnGithubPages =
+        window.location.hostname === "mrdarip.github.io";
+
+      function githubifyRoute(route) {
+        return launchingOnGithubPages
+          ? "/Hack-Club-customs-tracker/" + route
+          : route;
+      }
+
+      var submitButton = document.getElementById("submitButton");
+
+      submitButton.addEventListener("click", function (event) {
+        console.log("clicked");
+
+        var productName = document.getElementById("productName").value;
+        var productImage = document.getElementById("productImage").value;
+
+        var products = {};
+        fetch(githubifyRoute("/data/products.json"))
+          .then((response) => response.json())
+          .then((data) => {
+            products = data;
+            console.log(products);
+
+            products.productsAndImage.push({
+              name: productName,
+              image: productImage,
+            });
+
+            var output = document.getElementById("output");
+            output.value = JSON.stringify(products, null, 4);
+          });
+      });
+    </script>
+  </body>
 </html>
