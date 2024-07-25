@@ -23,7 +23,7 @@
       <h2>
         2. Replace the text
         <a
-          href="https://github.com/mrdarip/Hack-Club-customs-tracker/edit/main/data/countries.json"
+          href="https://github.com/mrdarip/Hack-Club-customs-tracker/edit/main/data/customs.json"
           >here</a
         >
         by pasting and then commit
@@ -54,25 +54,20 @@
       submitButton.addEventListener("click", function (event) {
         steps.style.display = "block";
 
-        var countryName = document.getElementById("countryName").value;
-        var currency = document.getElementById("currency").value;
-        var code = document.getElementById("code").value;
+        var username = document.getElementById("username").value;
+        var customs = document.getElementById("customs").value;
 
         var countries = {};
-        fetch(githubifyRoute("/data/countries.json"))
+        fetch(githubifyRoute("/data/customs.json"))
           .then((response) => response.json())
           .then((data) => {
-            countries = data;
-            console.log(countries);
+            allCustoms = data;
+            console.log(allCustoms.customs[countrySelector.value].products[productSelector.value]);
 
-            countries.countries.push({
-              code: code,
-              name: countryName,
-              currency: currency,
-            });
+            allCustoms.customs[countrySelector.value].products[productSelector.value]["a"] = "caca";
 
             var output = document.getElementById("output");
-            output.value = JSON.stringify(countries, null, 4);
+            output.value = JSON.stringify(allCustoms, null, 4);
           });
       });
 
