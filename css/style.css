@@ -78,3 +78,20 @@ header{
 form{
   margin: 1em;
 }
+
+footer{
+  padding: 1em;
+}
+
+#actions{
+  display: flex;
+  justify-content: space-around;
+}
+
+#actions a{
+  text-decoration: none;
+  color: var(--theme-ui-colors-snow);
+  background-color: var(--theme-ui-colors-dark);
+  padding: 0.5em;
+  border-radius: 1em;
+}
