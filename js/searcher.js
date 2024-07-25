@@ -49,12 +49,12 @@ function setProducts(countryCode) {
     var currentCountryCustoms = customs[countryCode];
     if(currentCountryCustoms != undefined){
         var productsToDisplay = currentCountryCustoms["products"];
-        var productsToDisplayKeys = Object.keys(productsToDisplay);
+        var productsCodes = Object.keys(productsToDisplay);
 
         var currency = countries.find(country => country.code == countryCode).currency;
-        for (var i = 0; i < productsToDisplayKeys.length; i++) {
-            var productInfo = products[productsToDisplayKeys[i]];
-            var productCustoms = productsToDisplay[productInfo.name];
+        for (var i = 0; i < productsCodes.length; i++) {
+            var productInfo = products[productsCodes[i]];
+            var productCustoms = productsToDisplay[productsCodes[i]];
 
             var maxCustom = Math.max.apply(null, Object.values(productCustoms));
             var minCustom = Math.min.apply(null, Object.values(productCustoms));
