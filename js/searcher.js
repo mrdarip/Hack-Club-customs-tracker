@@ -44,6 +44,8 @@ function initializeCustoms() {
 
 function setProducts(countryCode) {
     var productsArea = document.getElementById("productsArea");
+    productsArea.innerHTML = "";
+
     var currentCountryCustoms = customs[countryCode];
     if(currentCountryCustoms != undefined){
         var productsToDisplay = currentCountryCustoms["products"];
