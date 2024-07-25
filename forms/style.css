@@ -39,7 +39,7 @@ form{
     background-color: var(--theme-ui-colors-sheet);
     border-radius: 5px;
     box-shadow: 0 0 10px var(--theme-ui-colors-sunken);
-    margin: 10% auto;
+    margin: 2em auto;
     padding: 20px;
     width: 70%;
     display: flex;
@@ -70,9 +70,9 @@ section{
     background-color: var(--theme-ui-colors-sheet);
     border-radius: 5px;
     box-shadow: 0 0 10px var(--theme-ui-colors-sunken);
-    margin: 10% auto;
     padding: 20px;
     width: 70%;
+    margin: 2em auto;
     display: flex;
     flex-direction: column;
     gap: 1em;
