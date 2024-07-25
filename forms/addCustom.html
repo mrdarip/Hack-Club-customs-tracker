@@ -67,20 +67,21 @@
           .then((response) => response.json())
           .then((data) => {
             allCustoms = data;
-            console.log(
-              allCustoms.customs[countrySelector.value].products[
-                productSelector.value
-              ]
-            );
 
-            if (!countrySelector.value in allCustoms.customs) {
+            if (allCustoms.customs[countrySelector.value] === undefined) {
+                console.log("country not in customs");
               allCustoms.customs[countrySelector.value] = { products: {} };
+            }
+
+            if (allCustoms.customs[countrySelector.value].products[productSelector.value] === undefined) {
+                console.log("product not in customs");
+              allCustoms.customs[countrySelector.value].products[productSelector.value] = {};
             }
 
             allCustoms.customs[countrySelector.value].products[
               productSelector.value
-            ]["a"] = "caca";
-
+            ][username] = customs;
+            
             var output = document.getElementById("output");
             output.value = JSON.stringify(allCustoms, null, 4);
           });
