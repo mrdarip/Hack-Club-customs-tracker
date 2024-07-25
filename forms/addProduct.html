@@ -11,10 +11,10 @@
       <input type="text" name="productName" id="productName" placeholder="name"/>
       <input type="url" name="productImage" id="productImage" placeholder="image URL" />
 
-      <input type="submit" value="Add product" id="submitButton" />
+      <a id="submitButton" href="#">submit</a>
     </form>
 
-    <section>
+    <section id="steps" style="display: none;">
       <h2>1. Copy this to your clipboard</h2>
       <textarea name="output" id="output" cols="30" rows="10"></textarea>
 
@@ -39,9 +39,10 @@
       }
 
       var submitButton = document.getElementById("submitButton");
+      var steps = document.getElementById("steps");
 
       submitButton.addEventListener("click", function (event) {
-        console.log("clicked");
+        steps.style.display = "block";
 
         var productName = document.getElementById("productName").value;
         var productImage = document.getElementById("productImage").value;
