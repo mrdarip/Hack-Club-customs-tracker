@@ -64,7 +64,7 @@ function setProducts(countryCode) {
 
             productDiv.className = "product";
             productDiv.innerHTML = "<img src='" + productInfo.image + "' alt='product image' width='100' height='100'>" +
-                "<p>" + productInfo.name + "</p>"+
+                "<h2>" + productInfo.name + "</h2>"+
                 "<p>Max custom: " + maxCustom + " " + currency +"</p>"+
                 "<p>Min custom: " + minCustom + " " + currency +"</p>"+
                 "<p>Average custom: " + averageCustomFromProductCustoms + " " + currency +"</p>";

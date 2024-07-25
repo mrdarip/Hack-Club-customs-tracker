@@ -16,9 +16,6 @@
   --theme-ui-colors-cyan: #5bc0de;
   --theme-ui-colors-blue: #338eda;
   --theme-ui-colors-purple: #a633d6;
-  --theme-ui-colors-twitter: #1da1f2;
-  --theme-ui-colors-facebook: #3b5998;
-  --theme-ui-colors-instagram: #e1306c;
   --theme-ui-colors-text: #1f2d3d;
   --theme-ui-colors-background: #ffffff;
   --theme-ui-colors-elevated: #ffffff;
@@ -36,4 +33,48 @@ body{
     color: var(--theme-ui-colors-text);
     padding: 0px;
     margin: 0px;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+#productsArea{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    gap:1em;
+}
+
+.product{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+
+  background-color: var(--theme-ui-colors-snow);
+  border-radius: 2em;
+  padding: 2em;
+  box-shadow: 0px 0px 10px 0px var(--theme-ui-colors-sunken);
+  width: 200px;
+  height: min-content;
+}
+
+.product img{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.product p{
+  margin: 0px;
+  padding: 0px;
+}
+
+header{
+  padding: 1em;
+  background-color: var(--theme-ui-colors-dark);
+  color: var(--theme-ui-colors-snow);
+}
+
+form{
+  margin: 1em;
 }
