@@ -139,6 +139,11 @@
             "name":"Croatia",
             "code":"HR",
             "currency":"kn"
+        },
+        {
+            "name": "Philippines",
+            "code": "PH",
+            "currency": "₱"
         }
     ]
 }
